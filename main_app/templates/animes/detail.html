@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ anime.name }}</span>
+    <p>Breed: {{ anime.genre }}</p>
+    <p>Release Year: {{ anime.releaseYear }}</p>
+    <p>Description: {{ anime.description|linebreaks }}</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'anime_update' anime.id %}">Edit</a>
+    <a href="{% url 'anime_delete' anime.id %}">Delete</a>
+  </div>
+</div>
+
+{% endblock %}
